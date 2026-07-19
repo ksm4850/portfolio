@@ -2,19 +2,17 @@
 
 ## 전체 구조
 
-![아키텍처](projects/medias/play/cq-architecture.png)
-
 통신은 크게 두 갈래로 나뉩니다.
 
-- **클라이언트(CLI·웹) → 백엔드** — 역할에 따라 붙는 곳이 다르다.
-  **Relay**에는 워커 실시간 상태·조작(job 제어, 터미널 등)을 위해 붙는다 — CLI는 WebSocket(MCP)·REST,
-  웹은 REST API. **Supabase**에는 저장된 데이터(실험 정의·run·수집된 메트릭 이력) 조회를 위해 REST로 붙는다.
-- **워커 ↔ 백엔드** — 워커와 Relay의 런타임 통신은 **전부 NATS**로만 이뤄진다(REST는 워커 등록 등
-  컨트롤 플레인 한정). 워커가 방화벽 뒤에서 아웃바운드로 NATS에 붙기 때문에 인바운드 포트가 필요 없다.
+- **클라이언트(CLI·웹) → 백엔드** — 역할에 따라 붙는 곳이 다릅니다.
+  **Relay**에는 워커 실시간 상태·조작(job 제어, 터미널 등)을 위해 붙습니다 — CLI는 WebSocket(MCP)·REST,
+  웹은 REST API. **Supabase**에는 저장된 데이터(실험 정의·run·수집된 메트릭 이력) 조회를 위해 REST로 붙습니다.
+- **워커 ↔ 백엔드** — 워커와 Relay의 런타임 통신은 **전부 NATS**로만 이뤄집니다(REST는 워커 등록 등
+  컨트롤 플레인 한정). 워커가 방화벽 뒤에서 아웃바운드로 NATS에 붙기 때문에 인바운드 포트가 필요 없습니다.
 
 ## 프로젝트 구조
 
-도메인 단위로 분리한 모노레포다.
+도메인 단위로 분리한 모노레포입니다.
 
 ```
 workflow-pilot/
@@ -34,13 +32,12 @@ workflow-pilot/
   NATS RPC로 변환해 워커에 전달) + **NATS 인증 콜아웃**(워커별 JWT 동적 발급). job 큐잉·상태 전이,
   메트릭 집계를 담당. 상태 캐시로 Redis, 이력 저장으로 Supabase를 사용
 - **NATS JetStream** — relay ↔ 워커 간 **유일한 런타임 통신 채널**. job 명령과 워커 RPC(MCP)는
-  request-reply(`wp.worker.{id}.rpc`)로, 실행 progress·디버그 로그는 JetStream 스트림
-  (`JOB_PROGRESS`·`WORKER_STREAMS`)으로 처리. 메시지 지속성으로 relay 재시작 중에도 유실 방지
+  request-reply(`wp.worker.{id}.rpc`)로, 실행 progress·디버그 로그는 JetStream 스트림으로 처리. 메시지 지속성으로 relay 재시작 중에도 유실 방지
 - **Supabase (PostgreSQL + pgvector)** — 실험 정의·run·수집된 메트릭 이력·지식 그래프 저장,
-  사용자·CLI 인증(Auth). Edge Function으로 실험 임베딩(`embed-jobs`)·하이브리드 검색(`hybrid-search`) 제공
+  사용자·CLI 인증(Auth). Edge Function으로 실험 임베딩·하이브리드 검색 제공
 - **Redis** — 워커 하트비트·가용 VRAM 등 고빈도 갱신 상태 캐시. Relay 수평 확장 시 공유 상태 역할
 - **web (React)** — 브라우저 대시보드(S3+CloudFront 호스팅). Supabase에 REST로 저장된 실험·run·메트릭을
-  조회하고, Relay REST API로 워커·job을 관리·조작한다. (본인 담당 영역 아님)
+  조회하고, Relay REST API로 워커·job을 관리·조작합니다. (본인 담당 영역 아님)
 
 ## 데이터 흐름 (실험 1회 실행)
 

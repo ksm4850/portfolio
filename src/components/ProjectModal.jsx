@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm'
 function ProjectModal({ project, mode, onClose }) {
   const [index, setIndex] = useState(0)
   const [tab, setTab] = useState(0)
+  const bodyRef = useRef(null)
   const images = project.media ?? []
   const docs =
     project.docs ?? (project.readme ? [{ label: 'README', md: project.readme }] : [])
@@ -27,6 +28,10 @@ function ProjectModal({ project, mode, onClose }) {
       document.body.style.overflow = ''
     }
   }, [onClose, mode, images.length])
+
+  useEffect(() => {
+    bodyRef.current?.scrollTo(0, 0)
+  }, [tab])
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -51,7 +56,7 @@ function ProjectModal({ project, mode, onClose }) {
             ))}
           </div>
         )}
-        <div className="modal-body">
+        <div className="modal-body" ref={bodyRef}>
           {mode === 'readme' ? (
             <div className="markdown">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>

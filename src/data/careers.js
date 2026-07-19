@@ -21,7 +21,7 @@ export const CAREERS = [
     company: '플레이아이디어랩',
     period: '2025.08 ~ 재직중',
     description: '"누구나 편하게 AI를 도입하기 위해"',
-    roles: ['Backend 개발', 'Infra'],
+    roles: ['Backend', 'Infra'],
     works: [
       {
         title: 'ML 실험 자동화 플랫폼 개발',
@@ -35,13 +35,19 @@ export const CAREERS = [
           { label: '기술적 고민', md: cqDecisions },
           { label: '회고', md: cqRetro },
         ],
+        media: [
+          'projects/medias/play/cq-project.png',
+          'projects/medias/play/cq-worker.png',
+          'projects/medias/play/cq-drive.png',
+          'projects/medias/play/cq-graph.png',
+        ]
       },
       {
         title: 'AWS 인프라 구축·운영',
         period: '2026.01 ~ 현재',
         content:
           'ECS, EC2, RDS, S3, CloudFront, Route53 운영 및 Docker 기반 컨테이너 환경 구축',
-        stacks: ['AWS', 'OpenTofu (Terraform)', 'S3', 'Docker', 'CloudWatch', 'Route53'],
+        stacks: ['AWS', 'OpenTofu (Terraform)', 'S3', 'Docker', 'CloudWatch', 'Route53', 'Claude Code'],
       },
       {
         title: '서버 배포환경 ECS 전환',
@@ -52,9 +58,9 @@ export const CAREERS = [
         readme: ecsMigration,
       },
       {
-        title: '이미지 라벨링 서비스 개발 및 온프레미스 환경 배포',
+        title: '이미지 라벨링 서비스 개발',
         period: '2025.08 ~ 진행중',
-        content: '2D/3D 라벨링 툴 및 모델 생성 서비스',
+        content: '2D/3D 라벨링 툴 및 모델 생성 서비스 및 온프레미스 환경 구축',
         stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'RabbitMQ'],
         readme: slamLabeling,
         media: [
@@ -69,7 +75,7 @@ export const CAREERS = [
     company: '한국미용데이터',
     period: '2023.02 ~ 2024.05',
     description: '미용관련 CRM, 자사몰, 미용강의 서비스 플랫폼',
-    roles: ['Backend 개발', 'Frontend 개발', 'Infra'],
+    roles: ['Backend', 'Frontend', 'Infra'],
     works: [
       {
         title: '앱 API 개발 및 유지보수',
@@ -140,7 +146,7 @@ export const CAREERS = [
     company: '모은넷',
     period: '2022.04 ~ 2023.01',
     description: 'MVNO 알뜰폰 통신 솔루션 개발사',
-    roles: ['Backend 개발', 'Frontend 개발'],
+    roles: ['Backend', 'Frontend'],
     works: [
       {
         title: '알뜰폰 솔루션 유지보수 및 개발',
