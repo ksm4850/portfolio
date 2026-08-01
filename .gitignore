@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# pnpm pdf 산출물
+포트폴리오.pdf
+
 # 개인정보가 포함된 원천 프로필 문서 (배포/공개 제외)
 PROFILE.md
 

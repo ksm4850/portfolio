@@ -24,6 +24,12 @@ export const CAREERS = [
     roles: ['Backend', 'Infra'],
     works: [
       {
+        title: 'Google Health API 기반 건강데이터 수집 백엔드 개발',
+        content:
+          'Google Health OAuth(서버사이드 authorization code) 연동, 웹훅 구독 + 크론 이원화로 수집 자동화',
+        stacks: ['GCP','Google Health API','Python', 'FastAPI', 'PostgreSQL'],
+      },
+      {
         title: 'ML 실험 자동화 플랫폼 개발',
         period: '2026.05 ~ 진행중',
         content: '로컬 GPU를 워커로 등록해 AI 에이전트가 실험을 설계·실행·추적하는 ML 실험 자동화 플랫폼. 웹 프론트를 제외한 백엔드·인프라 전반 담당',
