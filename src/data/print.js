@@ -26,7 +26,7 @@ export const DECK = [
     projects: [
       {
         title: 'Google Health API 기반 건강데이터 수집 백엔드 개발',
-        stacks: ['Google Health API', 'OAuth', 'Webhook', 'Cron'],
+        stacks: ['Google Health API', 'OAuth', 'Cron', 'FastAPI', 'PostgreSQL'],
         highlights: [
           {
             head: 'Google Health OAuth 연동',
@@ -34,7 +34,7 @@ export const DECK = [
           },
           {
             head: '수집 자동화',
-            body: '웹훅 구독 + 크론 이원화로 수집 자동화',
+            body: '매시 오늘치 재수집 + 매일 04시 전날 확정 크론으로 수집 자동화 — 덮어쓰기 방식이라 실패해도 다음 틱에 자가복구',
           },
         ],
       },
@@ -116,10 +116,6 @@ export const DECK = [
           {
             head: '라벨링 연동 자동 모델 학습',
             body: '라벨링 작업이 쌓이면 AI 모델이 자동 학습되는 파이프라인과 파일 드라이브(데이터셋 업로드·export) 백엔드 담당 — 2D Detection·Segmentation 지원',
-          },
-          {
-            head: '업로드 구조 개선 (Presigned URL)',
-            body: 'client→backend→S3 이중 전송을 제거하고 S3 직접 업로드로 전환 — 백엔드 병목과 트래픽 비용 해소',
           },
           {
             head: 'DGX-Spark 온프레미스 원박스 배포',
@@ -273,6 +269,6 @@ export const SKILLS = [
   { category: 'Frontend', items: ['Svelte', 'React', 'Vite'] },
   {
     category: 'DevOps / Infra',
-    items: ['Docker', 'AWS', 'NCP', 'OpenTofu', 'Nginx', 'Traefik', 'GitHub', 'GitLab'],
+    items: ['Docker', 'AWS', 'NCP', 'MinIO', 'OpenTofu', 'Nginx', 'Traefik', 'GitHub', 'GitLab'],
   },
 ]

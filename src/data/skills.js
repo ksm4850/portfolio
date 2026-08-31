@@ -36,6 +36,7 @@ export const SKILL_CATEGORIES = [
       { name: 'Docker Swarm', color: '#1D63ED' },
       { name: 'AWS', color: '#FF9900', darkText: true },
       { name: 'NCP', color: '#03C75A' },
+      { name: 'MinIO', color: '#C72E49' },
       { name: 'OpenTofu', color: '#FFDA18', darkText: true },
       { name: 'Nginx', color: '#009639' },
       { name: 'Traefik', color: '#24A1C1' },

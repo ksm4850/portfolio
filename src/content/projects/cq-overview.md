@@ -1,8 +1,8 @@
-# CQ — ML 실험 자동화 플랫폼
+# ML 실험 자동화 플랫폼
 
 ## 개요
 
-CQ는 연구자가 자신의 PC(GPU)를 워커로 등록하면, AI 에이전트(Claude Code, Codex 등)가 MCP를 통해
+연구자가 자신의 PC(GPU)를 워커로 등록하면, AI 에이전트(Claude Code, Codex 등)가 MCP를 통해  
 원격으로 ML 실험을 설계·실행·모니터링할 수 있는 플랫폼입니다.
 
 기존 ML 실험 워크플로우의 문제를 풀기 위해 시작했습니다:
@@ -10,7 +10,6 @@ CQ는 연구자가 자신의 PC(GPU)를 워커로 등록하면, AI 에이전트(
 - 클라우드 GPU는 비용 부담이 크고, 놀고 있는 로컬 GPU는 활용이 어려움
 - 실험 실행·기록·비교가 수동이라, 실험이 쌓일수록 "뭘 해봤는지"를 추적하기 어려움
 - AI 에이전트로 실험을 자동화하려 해도, 에이전트가 원격 GPU 환경에 접근할 방법이 마땅치 않음
-
 - 팀 구성: 2명 (본인은 웹 프론트엔드를 제외한 백엔드·인프라 전반 담당)
 - 담당 영역: Go 기반 core(CLI·워커·MCP)·relay(API 서버), NATS 메시징, DB 설계, 배포 인프라
 
@@ -29,3 +28,4 @@ CQ는 연구자가 자신의 PC(GPU)를 워커로 등록하면, AI 에이전트(
 - **메시징**: NATS JetStream
 - **DB**: Supabase (PostgreSQL + pgvector), Redis
 - **인프라**: Docker, AWS ECS, S3 + CloudFront, GitLab CI
+

@@ -1,5 +1,8 @@
 import ecsMigration from '../content/projects/ecs-migration.md?raw'
+import googleHealth from '../content/projects/google-health.md?raw'
 import slamLabeling from '../content/projects/slam-labeling.md?raw'
+import slamFeatures from '../content/projects/slam-features.md?raw'
+import slamTroubleshooting from '../content/projects/slam-troubleshooting.md?raw'
 import cqOverview from '../content/projects/cq-overview.md?raw'
 import cqArchitecture from '../content/projects/cq-architecture.md?raw'
 import cqDecisions from '../content/projects/cq-decisions.md?raw'
@@ -26,8 +29,12 @@ export const CAREERS = [
       {
         title: 'Google Health API 기반 건강데이터 수집 백엔드 개발',
         content:
-          'Google Health OAuth(서버사이드 authorization code) 연동, 웹훅 구독 + 크론 이원화로 수집 자동화',
+          'Google Health OAuth 연동, 환자정보 수집',
         stacks: ['GCP','Google Health API','Python', 'FastAPI', 'PostgreSQL'],
+        readme: googleHealth,
+        media: [
+          'projects/medias/play/health_chart.png',
+        ],
       },
       {
         title: 'ML 실험 자동화 플랫폼 개발',
@@ -67,8 +74,12 @@ export const CAREERS = [
         title: '이미지 라벨링 서비스 개발',
         period: '2025.08 ~ 진행중',
         content: '2D/3D 라벨링 툴 및 모델 생성 서비스 및 온프레미스 환경 구축',
-        stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'RabbitMQ'],
-        readme: slamLabeling,
+        stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'RabbitMQ', 'MinIO'],
+        docs: [
+          { label: '개요', md: slamLabeling },
+          { label: '기능 개발', md: slamFeatures },
+          { label: '문제 해결', md: slamTroubleshooting },
+        ],
         media: [
           'projects/medias/play/autolabeling.mp4',
           'projects/medias/play/smartpolygon.mp4'
