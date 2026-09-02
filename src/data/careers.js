@@ -12,13 +12,7 @@ import vukaClass from '../content/projects/vuka-class.md?raw'
 import vukaSelfCheckin from '../content/projects/vuka-self-checkin.md?raw'
 import vukaMobileReceipt from '../content/projects/vuka-mobile-receipt.md?raw'
 
-// 경력 데이터. works: 회사에서 진행한 업무/프로젝트 단위.
-// - title / period / content(한 줄 설명)는 필수(없으면 생략 렌더링)
-// - stacks: 사용 기술 칩 (선택)
-// - readme: src/content/projects/ 아래 md를 ?raw로 import (README 모달, 선택)
-// - docs: [{ label, md }] 배열 — README 모달을 탭으로 구성 (readme 대신 사용, 선택)
-// - media: public/projects/ 아래 이미지·영상 경로 배열 (미디어 모달, 선택)
-// - url: 프로젝트 링크 (선택, content 아래에 표시)
+
 export const CAREERS = [
   {
     company: '플레이아이디어랩',
@@ -74,7 +68,7 @@ export const CAREERS = [
         title: '이미지 라벨링 서비스 개발',
         period: '2025.08 ~ 진행중',
         content: '2D/3D 라벨링 툴 및 모델 생성 서비스 및 온프레미스 환경 구축',
-        stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'RabbitMQ', 'MinIO'],
+        stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'RabbitMQ','Redis', 'RabbitMQ', 'MinIO'],
         docs: [
           { label: '개요', md: slamLabeling },
           { label: '기능 개발', md: slamFeatures },

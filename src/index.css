@@ -12,10 +12,13 @@
   --color-bg: #ffffff;
   --color-bg-alt: #f7f7f7;
   --color-border: #e5e5e5;
+  --header-height: 60px;
 }
 
 html {
   scroll-behavior: smooth;
+  /* 고정 헤더에 섹션 상단이 가리지 않도록 앵커 이동 지점을 헤더 높이만큼 내린다 */
+  scroll-padding-top: calc(var(--header-height) + 16px);
 }
 
 body {
