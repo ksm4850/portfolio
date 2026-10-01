@@ -1,5 +1,8 @@
 import ecsMigration from '../content/projects/ecs-migration.md?raw'
-import googleHealth from '../content/projects/google-health.md?raw'
+import phenotypeOverview from '../content/projects/phenotype-overview.md?raw'
+import phenotypeArchitecture from '../content/projects/phenotype-architecture.md?raw'
+import phenotypeDecisions from '../content/projects/phenotype-decisions.md?raw'
+import phenotypeFrontend from '../content/projects/phenotype-frontend.md?raw'
 import slamLabeling from '../content/projects/slam-labeling.md?raw'
 import slamFeatures from '../content/projects/slam-features.md?raw'
 import slamTroubleshooting from '../content/projects/slam-troubleshooting.md?raw'
@@ -21,13 +24,24 @@ export const CAREERS = [
     roles: ['Backend', 'Infra'],
     works: [
       {
-        title: 'Google Health API 기반 건강데이터 수집 백엔드 개발',
+        title: '디지털 피노타이핑 연구 플랫폼 개발',
+        period: '2026.09 ~ 운영중',
         content:
-          'Google Health OAuth 연동, 환자정보 수집',
-        stacks: ['GCP','Google Health API','Python', 'FastAPI', 'PostgreSQL'],
-        readme: googleHealth,
+          '참가자 스마트폰 센서·이벤트와 웨어러블(Google Health) 데이터를 수집하고 연구자가 연구·참여자·설문·자료를 관리하는 플랫폼. 백엔드 전담, 어드민 프론트 일부·배포 담당',
+        stacks: ['Python', 'FastAPI', 'PostgreSQL', 'TimescaleDB', 'Keycloak', 'Google Health API', 'React', 'Docker', 'Claude Code'],
+        docs: [
+          { label: '개요', md: phenotypeOverview },
+          { label: '아키텍처', md: phenotypeArchitecture },
+          { label: '기술적 고민', md: phenotypeDecisions },
+          { label: '프론트엔드·운영', md: phenotypeFrontend },
+        ],
         media: [
-          'projects/medias/play/health_chart.png',
+          'projects/medias/play/phenotype-timeline.png',
+          'projects/medias/play/phenotype-study.png',
+          'projects/medias/play/phenotype-export.png',
+          'projects/medias/play/phenotype-ema-responses.png',
+          'projects/medias/play/phenotype-survey.png',
+          'projects/medias/play/phenotype-qr.png',
         ],
       },
       {
@@ -68,7 +82,7 @@ export const CAREERS = [
         title: '이미지 라벨링 서비스 개발',
         period: '2025.08 ~ 진행중',
         content: '2D/3D 라벨링 툴 및 모델 생성 서비스 및 온프레미스 환경 구축',
-        stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'RabbitMQ','Redis', 'RabbitMQ', 'MinIO'],
+        stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'RabbitMQ', 'Redis', 'MinIO'],
         docs: [
           { label: '개요', md: slamLabeling },
           { label: '기능 개발', md: slamFeatures },

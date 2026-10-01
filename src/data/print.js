@@ -25,17 +25,40 @@ export const DECK = [
     description: '"누구나 편하게 AI를 도입하기 위해"',
     projects: [
       {
-        title: 'Google Health API 기반 건강데이터 수집 백엔드 개발',
-        stacks: ['Google Health API', 'OAuth', 'Cron', 'FastAPI', 'PostgreSQL'],
+        title: '디지털 피노타이핑 연구 플랫폼',
+        period: '2026.09 ~ 운영중',
+        role: '백엔드 전담 · 프론트 일부 · 배포',
+        summary:
+          '참가자 스마트폰 센서·이벤트와 웨어러블(Google Health) 데이터를 수집하고, 연구자가 어드민에서 연구·설문·자료를 관리하는 플랫폼',
+        stacks: ['Python', 'FastAPI', 'TimescaleDB', 'Keycloak', 'React', 'Docker', 'Claude Code'],
         highlights: [
           {
-            head: 'Google Health OAuth 연동',
-            body: 'Google Health OAuth(서버사이드 authorization code) 연동',
+            head: '계층 아키텍처를 도구로 강제',
+            body: 'router → service → repository 모듈 간 의존을 끊고 모듈 간 흐름·트랜잭션은 usecases 계층에서만 조합 - import-linter·ruff·mypy로 CI에서 위반 차단',
           },
           {
-            head: '수집 자동화',
-            body: '매시 오늘치 재수집 + 매일 04시 전날 확정 크론으로 수집 자동화 — 덮어쓰기 방식이라 실패해도 다음 틱에 자가복구',
+            head: 'Redis 없는 작업 큐·분산 락',
+            body: 'DB 테이블 큐(SKIP LOCKED) + asyncio.Event 깨우기로 내보내기 시작 지연을 수 ms로 단축, advisory lock으로 다중 워커에서도 스케줄 수집을 한 번만 실행',
           },
+          {
+            head: '시계열 대량 수집·타임라인',
+            body: 'TimescaleDB hypertable·압축 + bind 상한을 고려한 청크 INSERT, 레인 단위 캐시로 조합 폭발(2ⁿ) 없이 새로 켠 레인만 계산',
+          },
+          {
+            head: 'Google Health 스케줄링 동기화',
+            body: '매시 오늘치 갱신 + 새벽 전날 확정, 덮어쓰기 방식이라 실패해도 다음 실행에 자가 복구',
+          },
+          {
+            head: '실DB 기반 테스트',
+            body: 'testcontainers 기반 TimescaleDB로 integration·services·repositories 3계층 테스트 구성',
+          },
+        ],
+        hero: 'projects/medias/play/phenotype-timeline.png',
+        images: [
+          'projects/medias/play/phenotype-study.png',
+          'projects/medias/play/phenotype-export.png',
+          'projects/medias/play/phenotype-ema-responses.png',
+          'projects/medias/play/phenotype-qr.png',
         ],
       },
       {
