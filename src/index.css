@@ -7,11 +7,14 @@
 }
 
 :root {
-  --color-text: #1a1a1a;
-  --color-text-muted: #6b6b6b;
+  --color-text: #0f172a;
+  --color-text-body: #334155;
+  --color-text-muted: #64748b;
   --color-bg: #ffffff;
-  --color-bg-alt: #f7f7f7;
-  --color-border: #e5e5e5;
+  --color-bg-alt: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-accent: #1d4ed8;
+  --color-accent-bg: #eff6ff;
   --header-height: 60px;
 }
 
@@ -28,6 +31,8 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
   -webkit-font-smoothing: antialiased;
 }
 

@@ -9,15 +9,8 @@ function Skills() {
           <div key={category} className="skills-row">
             <h3>{category}</h3>
             <ul className="skills-badges">
-              {items.map(({ name, color, darkText }) => (
-                <li
-                  key={name}
-                  className="skill-badge"
-                  style={{
-                    backgroundColor: color,
-                    color: darkText ? '#1a1a1a' : '#ffffff',
-                  }}
-                >
+              {items.map(({ name }) => (
+                <li key={name} className="skill-badge">
                   {name}
                 </li>
               ))}

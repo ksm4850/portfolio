@@ -21,12 +21,12 @@ export const PROFILE = {
 export const DECK = [
   {
     company: '플레이아이디어랩',
-    period: '2025.08 ~ 재직중',
+    period: '2025.08 ~ 2026.10',
     description: '"누구나 편하게 AI를 도입하기 위해"',
     projects: [
       {
         title: '디지털 피노타이핑 연구 플랫폼',
-        period: '2026.09 ~ 운영중',
+        period: '2026.09 ~ 2026.10',
         role: '백엔드 전담 · 프론트 일부 · 배포',
         summary:
           '참가자 스마트폰 센서·이벤트와 웨어러블(Google Health) 데이터를 수집하고, 연구자가 어드민에서 연구·설문·자료를 관리하는 플랫폼',
@@ -63,7 +63,7 @@ export const DECK = [
       },
       {
         title: 'ML 실험 자동화 플랫폼',
-        period: '2026.05 ~ 진행중',
+        period: '2026.05 ~ 2026.07',
         role: '웹 프론트 제외 백엔드·인프라 전반',
         summary:
           '로컬 GPU를 워커로 등록하면 AI 에이전트가 MCP로 원격 ML 실험을 설계·실행·추적하는 플랫폼',
@@ -97,12 +97,12 @@ export const DECK = [
         url: 'http://cq.pilab.co.kr',
       },
       {
-        title: '서버 배포환경 ECS 전환',
-        period: '2026.01 ~ 현재',
+        title: 'AWS 인프라 구축·운영 및 ECS 전환',
+        period: '2026.01 ~ 2026.10',
         role: '단독 담당',
         summary:
-          'NCP 개별 서버 → Docker Swarm 통합(비용) → AWS ECS 전환(운영 편의)으로 단계적 개선',
-        stacks: ['Docker Swarm', 'Traefik', 'AWS ECS', 'ALB', 'OpenTofu'],
+          'NCP 개별 서버 → Docker Swarm 통합(비용) → AWS ECS 전환(운영 편의)으로 단계적 개선. ECS·RDS·S3·CloudFront·Route53 운영',
+        stacks: ['AWS', 'ECS', 'Docker Swarm', 'Traefik', 'Terraform (OpenTofu)'],
         highlights: [
           {
             head: '1차 · Swarm 통합',
@@ -126,7 +126,7 @@ export const DECK = [
       },
       {
         title: '이미지 라벨링 서비스',
-        period: '2025.08 ~ 진행중',
+        period: '2025.08 ~ 2026.10',
         role: '백엔드·인프라 전반',
         summary:
           '라벨링하면 자동으로 AI 모델이 학습되는 2D/3D 라벨링 플랫폼. 온프레미스 원박스 배포까지 담당',
@@ -150,24 +150,6 @@ export const DECK = [
           'projects/medias/play/slam_tool.png',
         ],
         url: 'https://slam.pilab.co.kr',
-      },
-      {
-        title: 'AWS 인프라 구축·운영',
-        period: '2026.01 ~ 현재',
-        role: '단독 담당',
-        summary:
-          'ECS·EC2·RDS·S3·CloudFront·Route53 운영 및 Docker 기반 컨테이너 환경 구축',
-        stacks: ['AWS', 'OpenTofu', 'Docker', 'CloudWatch', 'Route53'],
-        highlights: [
-          {
-            head: '관리형 인프라 운영',
-            body: 'ECS·RDS·S3·CloudFront 등 AWS 전반을 운영하며 배포·모니터링을 관리형으로 일원화',
-          },
-          {
-            head: 'IaC 기반 운영',
-            body: 'OpenTofu로 인프라를 코드화해 변경을 리뷰·이력으로 추적, 배포 자동화',
-          },
-        ],
       },
     ],
   },
@@ -287,11 +269,13 @@ export const DECK = [
 ]
 
 export const SKILLS = [
-  { category: 'Language', items: ['Python', 'Go', 'TypeScript', 'JavaScript'] },
-  { category: 'Backend', items: ['FastAPI', 'Supabase', 'PostgreSQL', 'Redis', 'NATS'] },
-  { category: 'Frontend', items: ['Svelte', 'React', 'Vite'] },
+  {
+    category: 'Backend',
+    items: ['Python', 'Go', 'FastAPI', 'Supabase', 'PostgreSQL', 'Redis', 'NATS', 'RabbitMQ'],
+  },
   {
     category: 'DevOps / Infra',
-    items: ['Docker', 'AWS', 'NCP', 'MinIO', 'OpenTofu', 'Nginx', 'Traefik', 'GitHub', 'GitLab'],
+    items: ['Docker', 'AWS', 'NCP', 'MinIO', 'Terraform (OpenTofu)', 'Nginx', 'Traefik', 'GitHub', 'GitLab', 'Sentry'],
   },
+  { category: 'Frontend', items: ['TypeScript', 'Svelte', 'React', 'Vite'] },
 ]

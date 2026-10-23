@@ -19,13 +19,13 @@ import vukaMobileReceipt from '../content/projects/vuka-mobile-receipt.md?raw'
 export const CAREERS = [
   {
     company: '플레이아이디어랩',
-    period: '2025.08 ~ 재직중',
+    period: '2025.08 ~ 2026.10',
     description: '"누구나 편하게 AI를 도입하기 위해"',
     roles: ['Backend', 'Infra'],
     works: [
       {
         title: '디지털 피노타이핑 연구 플랫폼 개발',
-        period: '2026.09 ~ 운영중',
+        period: '2026.09 ~ 2026.10',
         content:
           '참가자 스마트폰 센서·이벤트와 웨어러블(Google Health) 데이터를 수집하고 연구자가 연구·참여자·설문·자료를 관리하는 플랫폼. 백엔드 전담, 어드민 프론트 일부·배포 담당',
         stacks: ['Python', 'FastAPI', 'PostgreSQL', 'TimescaleDB', 'Keycloak', 'Google Health API', 'React', 'Docker', 'Claude Code'],
@@ -46,7 +46,7 @@ export const CAREERS = [
       },
       {
         title: 'ML 실험 자동화 플랫폼 개발',
-        period: '2026.05 ~ 진행중',
+        period: '2026.05 ~ 2026.07',
         content: '로컬 GPU를 워커로 등록해 AI 에이전트가 실험을 설계·실행·추적하는 ML 실험 자동화 플랫폼. 웹 프론트를 제외한 백엔드·인프라 전반 담당',
         stacks: ['Go', 'TypeScript', 'NATS', 'Redis', 'Supabase', 'MCP', 'Claude Code'],
         url: 'http://cq.pilab.co.kr',
@@ -64,23 +64,16 @@ export const CAREERS = [
         ]
       },
       {
-        title: 'AWS 인프라 구축·운영',
-        period: '2026.01 ~ 현재',
+        title: 'AWS 인프라 구축·운영 및 ECS 전환',
+        period: '2026.01 ~ 퇴사',
         content:
-          'ECS, EC2, RDS, S3, CloudFront, Route53 운영 및 Docker 기반 컨테이너 환경 구축',
-        stacks: ['AWS', 'OpenTofu (Terraform)', 'S3', 'Docker', 'CloudWatch', 'Route53', 'Claude Code'],
-      },
-      {
-        title: '서버 배포환경 ECS 전환',
-        period: '2026.01 ~ 현재',
-        content:
-          'NCP 개별 서버 운영 → Docker Swarm 통합(비용 최적화) → AWS ECS 전환(운영 편의성·안정성)으로 단계적 개선. IaC(OpenTofu) 도입 및 배포 자동화',
-        stacks: ['Docker Swarm', 'Traefik', 'AWS ECS', 'ALB', 'OpenTofu (Terraform)'],
+          'NCP 개별 서버 운영 → Docker Swarm 통합(비용 최적화) → AWS ECS 전환(운영 편의성·안정성)으로 단계적 개선. ECS·RDS·S3·CloudFront·Route53 운영, IaC(OpenTofu) 도입 및 배포 자동화',
+        stacks: ['AWS', 'ECS', 'Docker Swarm', 'Traefik', 'Terraform (OpenTofu)', 'CloudWatch', 'Claude Code'],
         readme: ecsMigration,
       },
       {
         title: '이미지 라벨링 서비스 개발',
-        period: '2025.08 ~ 진행중',
+        period: '2025.08 ~ 퇴사',
         content: '2D/3D 라벨링 툴 및 모델 생성 서비스 및 온프레미스 환경 구축',
         stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'RabbitMQ', 'Redis', 'MinIO'],
         docs: [
@@ -170,7 +163,7 @@ export const CAREERS = [
   {
     company: '모은넷',
     period: '2022.04 ~ 2023.01',
-    description: 'MVNO 알뜰폰 통신 솔루션 개발사',
+    description: 'MVNO 알뜰폰 통신 솔루션 개발',
     roles: ['Backend', 'Frontend'],
     works: [
       {

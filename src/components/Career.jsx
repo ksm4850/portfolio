@@ -26,9 +26,14 @@ function Career() {
             <ul className="career-works">
               {works.map((work) => (
                 <li key={work.title} className="career-work">
-                  <h4>{work.title}</h4>
-                  {work.period && (
-                    <span className="career-work-period">{work.period}</span>
+                  <div className="career-work-head">
+                    <h4>{work.title}</h4>
+                    {work.period && (
+                      <span className="career-work-period">{work.period}</span>
+                    )}
+                  </div>
+                  {work.content && (
+                    <p className="career-work-content">{work.content}</p>
                   )}
                   {work.stacks?.length > 0 && (
                     <ul className="project-stacks">
@@ -36,9 +41,6 @@ function Career() {
                         <li key={stack}>{stack}</li>
                       ))}
                     </ul>
-                  )}
-                  {work.content && (
-                    <p className="career-work-content">{work.content}</p>
                   )}
                   {work.url && (
                     <a
@@ -65,7 +67,7 @@ function Career() {
                           type="button"
                           onClick={() => setModal({ project: work, mode: 'media' })}
                         >
-                          미디어
+                          화면
                         </button>
                       )}
                     </div>
