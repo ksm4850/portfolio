@@ -15,7 +15,7 @@ export const PROFILE = {
 }
 
 // media 경로는 public/ 기준(영상 제외).
-// - hero: 설명 페이지 오른쪽에 싣는 대표 이미지 (선택 — 넣거나 빼기 가능)
+// - hero: 설명 페이지 오른쪽에 싣는 대표 이미지 (선택 - 넣거나 빼기 가능)
 // - images: 설명 페이지 뒤 갤러리 페이지에 2열로 싣는 이미지들 (선택)
 // hero와 images는 서로 독립적이다.
 export const DECK = [
@@ -71,11 +71,11 @@ export const DECK = [
         highlights: [
           {
             head: '단일 바이너리로 CLI·MCP·워커 제공',
-            body: 'Go 단일 바이너리 하나가 CLI·MCP 서버·워커 에이전트를 모두 담당 — 런타임 의존성 없이 5개 플랫폼(Linux·macOS·Windows)으로 크로스컴파일해 GitHub Release·설치 스크립트로 배포',
+            body: 'Go 단일 바이너리 하나가 CLI·MCP 서버·워커 에이전트를 모두 담당 - 런타임 의존성 없이 5개 플랫폼(Linux·macOS·Windows)으로 크로스컴파일해 GitHub Release·설치 스크립트로 배포',
           },
           {
             head: '방화벽 뒤 워커 원격 제어',
-            body: '워커·릴레이 모두 NATS에 아웃바운드로만 연결하도록 토폴로지를 역전 — 인바운드 포트 없이 request-reply·JetStream으로 실행·로그를 처리',
+            body: '워커·릴레이 모두 NATS에 아웃바운드로만 연결하도록 토폴로지를 역전 - 인바운드 포트 없이 request-reply·JetStream으로 실행·로그를 처리',
           },
           {
             head: 'LLM이 짠 코드의 안전 실행',
@@ -138,7 +138,11 @@ export const DECK = [
           },
           {
             head: '라벨링 연동 자동 모델 학습',
-            body: '라벨링 작업이 쌓이면 AI 모델이 자동 학습되는 파이프라인과 파일 드라이브(데이터셋 업로드·export) 백엔드 담당 — 2D Detection·Segmentation 지원',
+            body: '라벨링 작업이 쌓이면 AI 모델이 자동 학습되는 파이프라인과 파일 드라이브(데이터셋 업로드·export) 백엔드 담당 - 2D Detection·Segmentation 지원',
+          },
+          {
+            head: '메모리 뱅크 기반 자동 라벨링 서비스 연동',
+            body: '온프레미스 GPU 서버 한 대에서 공용 모델과 프로젝트별 컨테이너를 나눠 띄우고, 메시지 큐 대신 HTTP로 백엔드와 직접 연결. 모델 버전별 결과 캐시로 같은 이미지를 다시 라벨링할 때 모델 재계산(최대 1.5초) 생략',
           },
           {
             head: 'DGX-Spark 온프레미스 원박스 배포',

@@ -16,6 +16,15 @@ export const SKILL_CATEGORIES = [
     ],
   },
   {
+    category: 'Frontend',
+    items: [
+      { name: 'TypeScript', color: '#3178C6' },
+      { name: 'Svelte', color: '#FF3E00' },
+      { name: 'React', color: '#61DAFB', darkText: true },
+      { name: 'Vite', color: '#646CFF' },
+    ],
+  },
+  {
     category: 'DevOps / Infra',
     items: [
       { name: 'Docker', color: '#2496ED' },
@@ -31,13 +40,5 @@ export const SKILL_CATEGORIES = [
       { name: 'Linux', color: '#FCC624', darkText: true },
     ],
   },
-  {
-    category: 'Frontend',
-    items: [
-      { name: 'TypeScript', color: '#3178C6' },
-      { name: 'Svelte', color: '#FF3E00' },
-      { name: 'React', color: '#61DAFB', darkText: true },
-      { name: 'Vite', color: '#646CFF' },
-    ],
-  },
+  
 ]

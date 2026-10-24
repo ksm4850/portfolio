@@ -15,16 +15,16 @@
 
 ## 주요 기능
 
-- **워커 등록** — CLI(`cq worker`)로 로컬 PC를 GPU 워커로 등록, 하트비트·GPU 메트릭 자동 수집
-- **실험 실행** — AI 에이전트가 MCP 도구로 실험(job)을 제출하면, 큐를 거쳐 적합한 워커에서 실행
-- **원격 접근** — 에이전트가 방화벽 뒤 워커의 파일시스템·셸에 접근 (read/write/bash)
-- **실험 추적** — 실험 간 계보(parent), 태그, 관계(개선/비교/파생)를 지식 그래프로 관리
-- **모니터링** — 웹 대시보드에서 실행 로그·GPU 사용률 실시간 확인, Slack/Dooray 알림
+- **워커 등록** - CLI(`cq worker`)로 로컬 PC를 GPU 워커로 등록, 하트비트·GPU 메트릭 자동 수집
+- **실험 실행** - AI 에이전트가 MCP 도구로 실험(job)을 제출하면, 큐를 거쳐 적합한 워커에서 실행
+- **원격 접근** - 에이전트가 방화벽 뒤 워커의 파일시스템·셸에 접근 (read/write/bash)
+- **실험 추적** - 실험 간 계보(parent), 태그, 관계(개선/비교/파생)를 지식 그래프로 관리
+- **모니터링** - 웹 대시보드에서 실행 로그·GPU 사용률 실시간 확인, Slack/Dooray 알림
 
 ## 기술 스택
 
-- **서버 (relay)**: Go (chi, Huma) — REST API + MCP 릴레이 (클라이언트 WebSocket ↔ 워커 NATS RPC 변환), Supabase(테이블 조회)
-- **클라이언트 (CLI·워커 에이전트)**: Go (cobra, MCP SDK) — 사용자 PC에 설치되는 프로그램이라, 런타임 의존성 없이 단일 바이너리로 배포할 수 있는 Go를 선택 (GitHub Release로 5개 플랫폼 크로스컴파일 배포)
+- **서버 (relay)**: Go (chi, Huma) - REST API + MCP 릴레이 (클라이언트 WebSocket ↔ 워커 NATS RPC 변환), Supabase(테이블 조회)
+- **클라이언트 (CLI·워커 에이전트)**: Go (cobra, MCP SDK) - 사용자 PC에 설치되는 프로그램이라, 런타임 의존성 없이 단일 바이너리로 배포할 수 있는 Go를 선택 (GitHub Release로 5개 플랫폼 크로스컴파일 배포)
 - **메시징**: NATS JetStream
 - **DB**: Supabase (PostgreSQL + pgvector), Redis
 - **인프라**: Docker, AWS ECS, S3 + CloudFront, GitLab CI

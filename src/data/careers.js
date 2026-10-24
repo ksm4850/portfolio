@@ -5,7 +5,7 @@ import phenotypeDecisions from '../content/projects/phenotype-decisions.md?raw'
 import phenotypeFrontend from '../content/projects/phenotype-frontend.md?raw'
 import slamLabeling from '../content/projects/slam-labeling.md?raw'
 import slamFeatures from '../content/projects/slam-features.md?raw'
-import slamTroubleshooting from '../content/projects/slam-troubleshooting.md?raw'
+import slamMemoryLearning from '../content/projects/slam-memory-learning.md?raw'
 import cqOverview from '../content/projects/cq-overview.md?raw'
 import cqArchitecture from '../content/projects/cq-architecture.md?raw'
 import cqDecisions from '../content/projects/cq-decisions.md?raw'
@@ -45,6 +45,22 @@ export const CAREERS = [
         ],
       },
       {
+        title: '이미지 라벨링 서비스 개발',
+        period: '2025.08 ~ 퇴사',
+        content: '2D/3D 라벨링 툴 및 모델 생성 서비스 및 온프레미스 환경 구축. 메모리 뱅크 기반 자동 라벨링의 BE 연동·캐싱 레이어·배포 담당',
+        stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'RabbitMQ', 'Redis', 'MinIO', 'Docker'],
+        docs: [
+          { label: '개요', md: slamLabeling },
+          { label: '기능 개발', md: slamFeatures },
+          { label: '메모리 뱅크 기반 자동 라벨링', md: slamMemoryLearning },
+        ],
+        media: [
+          'projects/medias/play/autolabeling.mp4',
+          'projects/medias/play/smartpolygon.mp4'
+        ],
+        url : 'https://slam.pilab.co.kr'
+      },
+      {
         title: 'ML 실험 자동화 플랫폼 개발',
         period: '2026.05 ~ 2026.07',
         content: '로컬 GPU를 워커로 등록해 AI 에이전트가 실험을 설계·실행·추적하는 ML 실험 자동화 플랫폼. 웹 프론트를 제외한 백엔드·인프라 전반 담당',
@@ -70,22 +86,6 @@ export const CAREERS = [
           'NCP 개별 서버 운영 → Docker Swarm 통합(비용 최적화) → AWS ECS 전환(운영 편의성·안정성)으로 단계적 개선. ECS·RDS·S3·CloudFront·Route53 운영, IaC(OpenTofu) 도입 및 배포 자동화',
         stacks: ['AWS', 'ECS', 'Docker Swarm', 'Traefik', 'Terraform (OpenTofu)', 'CloudWatch', 'Claude Code'],
         readme: ecsMigration,
-      },
-      {
-        title: '이미지 라벨링 서비스 개발',
-        period: '2025.08 ~ 퇴사',
-        content: '2D/3D 라벨링 툴 및 모델 생성 서비스 및 온프레미스 환경 구축',
-        stacks: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'RabbitMQ', 'Redis', 'MinIO'],
-        docs: [
-          { label: '개요', md: slamLabeling },
-          { label: '기능 개발', md: slamFeatures },
-          { label: '문제 해결', md: slamTroubleshooting },
-        ],
-        media: [
-          'projects/medias/play/autolabeling.mp4',
-          'projects/medias/play/smartpolygon.mp4'
-        ],
-        url : 'https://slam.pilab.co.kr'
       },
     ],
   },
