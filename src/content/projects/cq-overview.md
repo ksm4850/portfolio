@@ -2,10 +2,10 @@
 
 ## 개요
 
-연구자가 자신의 PC(GPU)를 워커로 등록하면, AI 에이전트(Claude Code, Codex 등)가 MCP를 통해  
-원격으로 ML 실험을 설계·실행·모니터링할 수 있는 플랫폼입니다.
+연구자가 자신의 PC(GPU)를 워커로 등록하면, AI 에이전트(Claude Code, Codex 등)가 MCP를 통해
+원격으로 ML 실험을 설계·실행·모니터링할 수 있는 플랫폼
 
-기존 ML 실험 워크플로우의 문제를 풀기 위해 시작했습니다:
+기존 ML 실험 워크플로우의 문제를 해결하기 위해 시작
 
 - 클라우드 GPU는 비용 부담이 크고, 놀고 있는 로컬 GPU는 활용이 어려움
 - 실험 실행·기록·비교가 수동이라, 실험이 쌓일수록 "뭘 해봤는지"를 추적하기 어려움
@@ -28,4 +28,3 @@
 - **메시징**: NATS JetStream
 - **DB**: Supabase (PostgreSQL + pgvector), Redis
 - **인프라**: Docker, AWS ECS, S3 + CloudFront, GitLab CI
-

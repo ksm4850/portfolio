@@ -217,6 +217,14 @@
   transition: border-color 0.15s ease;
 }
 
+.career-work.clickable {
+  cursor: pointer;
+}
+
+.career-work.clickable:hover {
+  border-color: var(--color-accent);
+}
+
 .career-work:hover {
   border-color: #cbd5e1;
 }
@@ -302,6 +310,18 @@
 .project-links button:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+.project-links button.primary {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.project-links button.primary:hover {
+  background: #1e40af;
+  border-color: #1e40af;
+  color: #fff;
 }
 
 

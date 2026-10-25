@@ -2,17 +2,17 @@
 
 ## 전체 구조
 
-통신은 크게 두 갈래로 나뉩니다.
+통신은 크게 두 갈래로 구분
 
-- **클라이언트(CLI·웹) → 백엔드** - 역할에 따라 붙는 곳이 다릅니다.
-  **Relay**에는 워커 실시간 상태·조작(job 제어, 터미널 등)을 위해 붙습니다 - CLI는 WebSocket(MCP)·REST,
-  웹은 REST API. **Supabase**에는 저장된 데이터(실험 정의·run·수집된 메트릭 이력) 조회를 위해 REST로 붙습니다.
-- **워커 ↔ 백엔드** - 워커와 Relay의 런타임 통신은 **전부 NATS**로만 이뤄집니다(REST는 워커 등록 등
-  컨트롤 플레인 한정). 워커가 방화벽 뒤에서 아웃바운드로 NATS에 붙기 때문에 인바운드 포트가 필요 없습니다.
+- **클라이언트(CLI·웹) → 백엔드** - 역할에 따라 연결 대상이 다름
+  - **Relay**: 워커 실시간 상태·조작(job 제어, 터미널 등)용. CLI는 WebSocket(MCP)·REST, 웹은 REST API
+  - **Supabase**: 저장된 데이터(실험 정의·run·수집된 메트릭 이력) 조회용 REST
+- **워커 ↔ 백엔드** - 워커와 Relay의 런타임 통신은 **전부 NATS**로만 처리(REST는 워커 등록 등 컨트롤 플레인 한정)
+  - 워커가 방화벽 뒤에서 아웃바운드로 NATS에 연결하므로 인바운드 포트 불필요
 
 ## 프로젝트 구조
 
-도메인 단위로 분리한 모노레포입니다.
+도메인 단위로 분리한 모노레포
 
 ```
 workflow-pilot/
@@ -36,8 +36,8 @@ workflow-pilot/
 - **Supabase (PostgreSQL + pgvector)** - 실험 정의·run·수집된 메트릭 이력·지식 그래프 저장,
   사용자·CLI 인증(Auth). Edge Function으로 실험 임베딩·하이브리드 검색 제공
 - **Redis** - 워커 하트비트·가용 VRAM 등 고빈도 갱신 상태 캐시. Relay 수평 확장 시 공유 상태 역할
-- **web (React)** - 브라우저 대시보드(S3+CloudFront 호스팅). Supabase에 REST로 저장된 실험·run·메트릭을
-  조회하고, Relay REST API로 워커·job을 관리·조작합니다. (본인 담당 영역 아님)
+- **web (React)** - 브라우저 대시보드(S3+CloudFront 호스팅). Supabase에 저장된 실험·run·메트릭을
+  REST로 조회하고, Relay REST API로 워커·job을 관리·조작 (본인 담당 영역 아님)
 
 ## 데이터 흐름 (실험 1회 실행)
 

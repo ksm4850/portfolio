@@ -24,8 +24,17 @@ function Career() {
               ))}
             </ul>
             <ul className="career-works">
-              {works.map((work) => (
-                <li key={work.title} className="career-work">
+              {works.map((work) => {
+                const hasReadme = work.readme || work.docs?.length > 0
+                return (
+                <li
+                  key={work.title}
+                  className={`career-work${hasReadme ? ' clickable' : ''}`}
+                  onClick={(e) => {
+                    if (hasReadme && !e.target.closest('a, button'))
+                      setModal({ project: work, mode: 'readme' })
+                  }}
+                >
                   <div className="career-work-head">
                     <h4>{work.title}</h4>
                     {work.period && (
@@ -52,14 +61,15 @@ function Career() {
                       🔗 {work.url}
                     </a>
                   )}
-                  {(work.readme || work.docs?.length > 0 || work.media?.length > 0) && (
+                  {(hasReadme || work.media?.length > 0) && (
                     <div className="project-links">
-                      {(work.readme || work.docs?.length > 0) && (
+                      {hasReadme && (
                         <button
                           type="button"
+                          className="primary"
                           onClick={() => setModal({ project: work, mode: 'readme' })}
                         >
-                          README
+                          상세 내용
                         </button>
                       )}
                       {work.media?.length > 0 && (
@@ -73,7 +83,8 @@ function Career() {
                     </div>
                   )}
                 </li>
-              ))}
+                )
+              })}
             </ul>
           </li>
         ))}
