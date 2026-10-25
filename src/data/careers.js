@@ -54,10 +54,6 @@ export const CAREERS = [
           { label: '기능 개발', md: slamFeatures },
           { label: '메모리 뱅크 기반 자동 라벨링', md: slamMemoryLearning },
         ],
-        media: [
-          'projects/medias/play/autolabeling.mp4',
-          'projects/medias/play/smartpolygon.mp4'
-        ],
         url : 'https://slam.pilab.co.kr'
       },
       {
