@@ -1,9 +1,15 @@
 import { useState } from 'react'
 import { CAREERS } from '../data/careers'
 import ProjectModal from './ProjectModal'
+import { track } from '../analytics'
 
 function Career() {
   const [modal, setModal] = useState(null) // { project: work, mode: 'readme' | 'images' }
+
+  const openModal = (work, mode) => {
+    setModal({ project: work, mode })
+    track(mode === 'readme' ? 'open_readme' : 'open_media', { project: work.title })
+  }
 
   return (
     <section id="career" className="section">
@@ -32,7 +38,7 @@ function Career() {
                   className={`career-work${hasReadme ? ' clickable' : ''}`}
                   onClick={(e) => {
                     if (hasReadme && !e.target.closest('a, button'))
-                      setModal({ project: work, mode: 'readme' })
+                      openModal(work, 'readme')
                   }}
                 >
                   <div className="career-work-head">
@@ -67,7 +73,7 @@ function Career() {
                         <button
                           type="button"
                           className="primary"
-                          onClick={() => setModal({ project: work, mode: 'readme' })}
+                          onClick={() => openModal(work, 'readme')}
                         >
                           상세 내용
                         </button>
@@ -75,7 +81,7 @@ function Career() {
                       {work.media?.length > 0 && (
                         <button
                           type="button"
-                          onClick={() => setModal({ project: work, mode: 'media' })}
+                          onClick={() => openModal(work, 'media')}
                         >
                           화면
                         </button>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { track } from '../analytics'
 
 // mode: 'readme' | 'media'
 // readme 모달은 project.docs([{ label, md }])가 있으면 탭으로, 없으면 project.readme 단일 문서로 표시
@@ -49,7 +50,10 @@ function ProjectModal({ project, mode, onClose }) {
                 key={label}
                 type="button"
                 className={tab === i ? 'active' : ''}
-                onClick={() => setTab(i)}
+                onClick={() => {
+                  setTab(i)
+                  track('view_doc_tab', { project: project.title, tab: label })
+                }}
               >
                 {label}
               </button>
